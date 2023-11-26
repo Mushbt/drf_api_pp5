@@ -1,4 +1,5 @@
 from rest_framework import generics, permissions
+from .models import Comment
 from .serializers import CommentSerializer, CommentDetailSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
