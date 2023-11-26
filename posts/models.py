@@ -11,8 +11,8 @@ class Category(models.Model):
 
 class Post(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     category = models.ManyToManyField(Category)
@@ -21,7 +21,7 @@ class Post(models.Model):
     )
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['-created_on']
 
     def __str__(self):
         return f'{self.id} {self.title}'
