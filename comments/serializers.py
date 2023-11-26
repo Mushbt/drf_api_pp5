@@ -21,7 +21,7 @@ class CommentSerializer(serializers.ModelSerializer):
             'post',
             'created_on',
             'updated_on',
-            'comment_content',
+            'content',
             'profile_id',
             'profile_image',
         ]
