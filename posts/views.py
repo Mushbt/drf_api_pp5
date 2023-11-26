@@ -37,7 +37,7 @@ class PostDetail(APIView):
     serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]
 
-    def get(self, request, pk):
+    def get_object(self, pk):
         try:
             post = Post.objects.get(pk=pk)
             self.check_object_permissions(self.request, post)
@@ -52,3 +52,4 @@ class PostDetail(APIView):
             context={'request': request}
             )
         return Response(serializer.data)
+    
