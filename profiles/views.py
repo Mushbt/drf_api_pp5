@@ -4,7 +4,7 @@ from .models import Profile
 from .serializers import ProfileSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
-class ProfileList(generics.ListCreateAPIView):
+class ProfileList(generics.ListAPIView):
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
 
