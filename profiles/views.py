@@ -15,8 +15,8 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Profile.objects.all()
     
     def delete(self, request, pk):
-        profile = self.get_object(pk)
-        profile.delete()
+        user = self.request.user
+        user.delete()
         return Response(
             status=status.HTTP_204_NO_CONTENT
         )
