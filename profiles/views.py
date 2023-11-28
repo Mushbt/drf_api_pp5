@@ -22,7 +22,8 @@ class ProfileList(generics.ListAPIView):
         )
     ).order_by('-created_on')
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        filters.SearchFilter,
     ]
     ordering_fields = [
         'posts_number',
@@ -30,6 +31,9 @@ class ProfileList(generics.ListAPIView):
         'following_number',
         'owner__following__created__on',
         'owner__followed__created_on',
+    ]
+    search_fields = [
+        'owner__username',
     ]
 
 
