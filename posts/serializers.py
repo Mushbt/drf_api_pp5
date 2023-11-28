@@ -8,6 +8,8 @@ class PostSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     like_id = serializers.SerializerMethodField()
+    comments_number = serializers.ReadOnlyField()
+    likes_number = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.image.height > 4096:
@@ -52,4 +54,6 @@ class PostSerializer(serializers.ModelSerializer):
             'category',
             'image',
             'like_id',
+            'comments_number',
+            'likes_number',
         ]
