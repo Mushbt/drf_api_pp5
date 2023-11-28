@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Post
-from likes.model import Like
+from likes.models import Like
 
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')

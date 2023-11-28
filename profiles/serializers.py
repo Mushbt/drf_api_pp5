@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Profile
-from followers.model import Follower
+from followers.models import Follower
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
