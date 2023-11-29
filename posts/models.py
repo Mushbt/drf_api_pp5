@@ -251,7 +251,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    countries = models.CharField(max_length=50, choices=country_choices)
+    country = models.CharField(max_length=50, choices=country_choices)
     image = models.ImageField(
         upload_to='images/', default='../default_post_etnxul', blank=True
     )

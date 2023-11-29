@@ -51,7 +51,7 @@ class PostSerializer(serializers.ModelSerializer):
             'updated_on',
             'title',
             'description',
-            'category',
+            'country',
             'image',
             'like_id',
             'comments_number',

@@ -33,11 +33,13 @@ class PostList(generics.ListCreateAPIView):
     search_fields = [
         'owner__username',
         'title',
+        'country',
     ]
     filterset_fields = [
         'owner__followed__owner__profile',
         'likes__owner__profile',
         'owner__profile',
+        'country',
     ]
 
     def perform_create(self, serializer):
