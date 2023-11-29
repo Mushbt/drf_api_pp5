@@ -1,6 +1,7 @@
 from django.db.models import Count
 from rest_framework import generics, status, filters
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Profile
 from .serializers import ProfileSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
@@ -24,6 +25,7 @@ class ProfileList(generics.ListAPIView):
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
+        DjangoFilterBackend,
     ]
     ordering_fields = [
         'posts_number',
@@ -34,6 +36,9 @@ class ProfileList(generics.ListAPIView):
     ]
     search_fields = [
         'owner__username',
+    ]
+    filterset_fields = [
+        'owner__following__followed__profile'
     ]
 
 
