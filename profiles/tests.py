@@ -25,3 +25,18 @@ class ProfileDetailViewTests(APITestCase):
         profile = Profile.objects.filter(pk=1).first()
         self.assertEqual(profile.description, 'hello lebanon!')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_user_can_not_update_other_profiles(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.put('/profiles/2/', {'description': 'hello brazil!'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    def test_not_logged_in_user_can_not_update_their_own_profile(self):
+        response = self.client.put('/profiles/1/',
+        {'description': 'hello germany'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    def test_user_can_delete_their_profile(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.delete('/profiles/1/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
