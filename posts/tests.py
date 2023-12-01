@@ -16,3 +16,14 @@ class PostListViewTests(APITestCase):
         self.client.login(username='samuel', password='password')
         response = self.client.post('/posts/', {'title': 'post title',
         'country': 'Lebanon'})
+
+    def test_post_must_include_all_fields(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.post('/posts/', {'country': 'Lebanon'})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+    
+    def test_user_can_view_posts(self):
+        samuel = User.objects.get(username='samuel')
+        Post.objects.create(owner=samuel, title='post title')
+        response = self.client.get('/posts/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
