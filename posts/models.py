@@ -244,7 +244,8 @@ class Post(models.Model):
         ('EH','Western Sahara'), 
         ('YE','Yemen'), 
         ('ZM','Zambia'), 
-        ('ZW','Zimbabwe')
+        ('ZW','Zimbabwe'),
+        ('other', 'Other'),
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
