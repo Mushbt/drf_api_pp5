@@ -21,7 +21,7 @@ class ProfileDetailViewTests(APITestCase):
     def test_user_can_update_their_own_profile(self):
         self.client.login(username='samuel', password='password')
         response = self.client.put('/profiles/1/',
-        {'content': 'hello lebanon!'})
+        {'description': 'hello lebanon!'})
         profile = Profile.objects.filter(pk=1).first()
-        self.assertEqual(profile.content, 'hello lebanon!')
+        self.assertEqual(profile.description, 'hello lebanon!')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
