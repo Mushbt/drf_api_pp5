@@ -94,7 +94,8 @@ class CommentDetailViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
     
     def test_user_can_not_delete_other_users_comment(self):
-        """ Test to ensure users can't delete other users comments
+        """
+        Test to ensure users can't delete other users comments
         """
         self.client.login(username='samuel', password='password')
         response = self.client.delete('/comments/2/')

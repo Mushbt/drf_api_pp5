@@ -113,9 +113,62 @@ In addition, posts, comments, likes and following can be created by logged-in us
 
 ### Automated Testing
 
+Even though automated testing was not required for this project, I decided to go ahead with it and I can say that it was a huge help! It helped me to discover a few errors in my code before I started to manually test all the different functions.
+
 Automated testing was done using the Django Rest Framework APITestCase.
 
-A total of --- tests were created and they all passed.
+A total of 34 tests were created and they all passed.
+
+The automated tests that were taken are as followed:
+
+#### Comments Testing
+
+- Test to ensure users can't create comments if not logged in.
+- Test to ensure logged in users can create comments
+- Test to ensure users can retrieve existing comments
+- Test to ensure non existing comments can't be retrieved
+- Test to ensure users can update their own comments
+- Test to ensure user can't update other user's comments
+- Test to ensure user can delete their own comments
+- Test to ensure users can't delete other users comments
+
+#### Followers Testing
+
+- Test to ensure users who are not logged in can't follow other users
+- Test to ensure logged in user can follow other users
+- Test to ensure user can retrieve existing following using valid ID
+- Test to ensure user can not retrieve a following from a non valid ID
+- Test to ensure user can unfollow other users
+- Test to ensure user can not remove other users followers
+
+#### Likes Testing
+
+- Test to ensure users who are not logged in not able to like posts
+- Test to ensure logged in users can like posts
+- Test to ensure user can retrieve existing likes using valid ID
+- Test to ensure user can't retrieve likes with no valid ID
+- Test to ensure user can unlike a post they have liked
+- Test to ensure user can't remove other users likes
+
+##### Posts Testing
+
+- Test to ensure logged out users can't create posts
+- Test to ensure logged in users can create posts
+- Test to ensure all fields are filled before uploading post
+- Test to ensure users can view posts
+- Test to ensure existing posts can be retrieved
+- Test to ensure non existing posts can't be retrieved
+- Test to ensure user can delete their own posts
+- Test to ensure users can't delete other users posts
+
+#### Profiles Testing
+
+- Test to ensure user can view other user profiles
+- Test to ensure user can not view non existing profiles
+- Test to ensure user can update their own profile
+- Test to ensure user can't update other users profiles
+- Test to ensure users can't update their profiles if not logged in
+- Test to ensure user can delete their own profile
 
 ## Credits
 

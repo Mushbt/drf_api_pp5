@@ -18,7 +18,7 @@ class FollowerListViewTests(APITestCase):
     
     def test_not_logged_in_user_can_not_follow(self):
         """
-        Test to ensure users who are not logged in not being able to follow other users
+        Test to ensure users who are not logged in can't follow other users
         """
         response = self.client.post('/followers/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
