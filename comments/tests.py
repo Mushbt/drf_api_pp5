@@ -25,3 +25,13 @@ class CommentDetailViewTests(APITestCase):
             description='wildlife', country='Brazil')
         Comment.objects.create(owner=samuel, post_id=1, content='wow')
         Comment.objects.create(owner=angelo, post_id=2, content='amazing')
+    
+    def test_logged_in_user_can_create_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.post('/comments/', {'post': 1, 'content': 'new comment'})
+        comment_count = Comment.objects.count()
+        self.assertEqual(comment_count, 3)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    
+   
