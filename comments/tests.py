@@ -32,6 +32,39 @@ class CommentDetailViewTests(APITestCase):
         comment_count = Comment.objects.count()
         self.assertEqual(comment_count, 3)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
+    def test_can_retrieve_existing_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.get('/comments/1/')
+        self.assertEqual(response.data['content'], 'wow')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_can_not_retrieve_non_existing_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.get('/comments/300/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+    
+    def test_user_can_update_their_own_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.put('/comments/1/', {'content': 'updated comment'})
+        comment = Comment.objects.filter(pk=1).first()
+        self.assertEqual(comment.content, 'updated comment')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_user_can_not_update_other_users_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.put('/comments/2/', {'content': 'updated comment'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    def test_user_can_delete_their_own_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.delete('/comments/1/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+    def test_user_can_not_delete_other_users_comment(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.delete('/comments/2/')
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     
    
