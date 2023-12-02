@@ -11,3 +11,41 @@ class LikeListViewTests(APITestCase):
     def test_not_logged_in_user_can_not_like_post(self):
         response = self.client.post('/likes/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+class LikeDetailViewTests(APITestCase):
+    def setUp(self):
+        samuel = User.objects.create_user(username='samuel', password='password')
+        angelo = User.objects.create_user(username='angelo', password='password')
+        Post.objects.create(
+            owner=samuel, title='wildlife', description='spring', country='Lebanon'
+        )
+        Post.objects.create(
+            owner=angelo, title='seaside', description='summer', country='Greece'
+        )
+        Like.objects.create(owner=samuel, post_id=2)
+        Like.objects.create(owner=angelo, post_id=1)
+    
+    def test_logged_in_user_can_like_post(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.post('/likes/', {'post': 1})
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
+    def test_user_can_retrieve_existing_like(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.get('/likes/1/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+    def test_user_can_not_retrieve_non_existing_like(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.get('/likes/300/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+    
+    def test_user_can_unlike_own_like(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.delete('/likes/1/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+    def test_user_can_unlike_other_user_like(self):
+        self.client.login(username='samuel', password='password')
+        response = self.client.delete('/likes/2/')
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
