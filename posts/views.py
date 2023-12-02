@@ -1,11 +1,19 @@
+# Imports
+
+# 3rd party
 from django.db.models import Count
 from rest_framework import generics, permissions,filters
 from django_filters.rest_framework import DjangoFilterBackend
+
+# Internal
 from .models import Post
 from .serializers import PostSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
 class PostList(generics.ListCreateAPIView):
+    """
+    Class for PostList
+    """
     serializer_class = PostSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
@@ -46,6 +54,10 @@ class PostList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Class for PostDetail to enable users to
+    retrieve, update and delete their posts
+    """
     serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Post.objects.annotate(

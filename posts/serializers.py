@@ -1,8 +1,16 @@
+# Imports
+
+# 3rd party
 from rest_framework import serializers
+
+# Internal
 from .models import Post
 from likes.models import Like
 
 class PostSerializer(serializers.ModelSerializer):
+    """ 
+    Class for PostSerializer
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
@@ -12,14 +20,20 @@ class PostSerializer(serializers.ModelSerializer):
     likes_number = serializers.ReadOnlyField()
 
     def validate_image(self, value):
+        """
+        Validation for uploaded images
+        """
+        # Image height limit of 4096px
         if value.image.height > 4096:
             raise serializers.ValidationError(
                 'Your image exceeds the height limit of 4096px.'
             )
+        # Image width limit of 4096px
         if value.image.width > 4096:
             raise serializers.ValidationError(
                 'Your image exceeds the width limit of 4096px.'
             )
+        # Image size limit of 2MB
         if value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(
                 'Your image is too large. Max size is 2MB.'
