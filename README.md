@@ -14,3 +14,39 @@ This repository contains the API set up using Django REST Framework for the Trav
 - [Validation](#validation)
 - [Testing](#testing)
 - [Credits](#credits)
+
+## User Stories
+
+## Database
+
+#### User Model
+
+#### Profile Model
+
+#### Post Model
+
+#### Follower Model
+
+#### Comment Model
+
+#### Like Model
+
+## Technologies Used
+
+### Language & Frameworks
+
+### Libraries & Tools
+
+## Validation
+
+## Testing
+
+### Manual Testing
+
+### Automated Testing
+
+## Credits
+
+### Images
+
+### Code
