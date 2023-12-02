@@ -16,6 +16,8 @@ This repository contains the API set up using Django REST Framework for the Trav
 - [Credits](#credits)
 
 ## User Stories
+The project's backend section centers on its administrative aspect and covers one user story:
+- As an admin, I want to be able to create, edit and delete users, posts, comments and likes. This allows the admin to exercise control over the application's content and swiftly remove any inappropriate material.
 
 ## Database
 
