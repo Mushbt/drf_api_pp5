@@ -1,8 +1,16 @@
+# Imports
+
+# 3rd party
 from rest_framework import serializers
+
+# Internal
 from .models import Profile
 from followers.models import Follower
 
 class ProfileSerializer(serializers.ModelSerializer):
+    """
+    Class for ProfileSerializer
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
@@ -15,6 +23,9 @@ class ProfileSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
     
     def get_following_id(self, obj):
+        """
+        Check if user is following other users
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             following = Follower.objects.filter(

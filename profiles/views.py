@@ -1,12 +1,20 @@
+# Imports 
+
+# 3rd party
 from django.db.models import Count
 from rest_framework import generics, status, filters
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
+
+# Internal
 from .models import Profile
 from .serializers import ProfileSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
 class ProfileList(generics.ListAPIView):
+    """
+    Class for ProfileList
+    """
     serializer_class = ProfileSerializer
     queryset = Profile.objects.annotate(
         posts_number=Count(
@@ -44,6 +52,9 @@ class ProfileList(generics.ListAPIView):
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Class for ProfileDetail
+    """
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.annotate(
@@ -62,6 +73,9 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     ).order_by('-created_on')
     
     def delete(self, request, pk):
+        """
+        Delete profile by ID
+        """
         user = self.request.user
         user.delete()
         return Response(
