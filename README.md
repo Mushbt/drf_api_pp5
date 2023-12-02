@@ -91,10 +91,31 @@ The following models were created to represent the database model structure of t
 [PEP8CI](https://pep8ci.herokuapp.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
 
 ## Testing
+The following tests were carried out on the app:
+1. Manual testing
+2. Automated testing
 
 ### Manual Testing
 
+- As an admin, I want to be able to create, edit and delete users, posts, comments and likes. This allows the admin to exercise control over the application's content and swiftly remove any inappropriate material.
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+User | Create, update & delete user | A user can be created, edited or deleted | Works as expected
+User | Change permissions | User permissions can be updated | Works as expected
+Profile | Create, update & delete | User profile can be created, edited or deleted | Works as expected
+Post | Create, update & delete | A post can be created, edited or deleted | Works as expected
+Comment | Create, update & delete | A comment can be created, edited or deleted | Works as expected
+Like | Create & delete | A like can be created or deleted (like / unlike post) | Works as expected
+Follower | Create & delete | Follow or unfollow user | Works as expected
+
+In addition, posts, comments, likes and following can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
+
 ### Automated Testing
+
+Automated testing was done using the Django Rest Framework APITestCase.
+
+A total of --- tests were created and they all passed.
 
 ## Credits
 
