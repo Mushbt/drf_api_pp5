@@ -119,7 +119,12 @@ Automated testing was done using the Django Rest Framework APITestCase.
 
 A total of 34 tests were created and they all passed.
 
-The automated tests that were taken are as followed:
+<details><summary>Automated Testing</summary>
+<img src="docs/testing/automated_testing.png">
+</details>
+
+
+### The automated tests that were taken are as followed:
 
 #### Comments Testing
 
@@ -169,6 +174,7 @@ The automated tests that were taken are as followed:
 - Test to ensure user can't update other users profiles
 - Test to ensure users can't update their profiles if not logged in
 - Test to ensure user can delete their own profile
+
 
 ## Credits
 
