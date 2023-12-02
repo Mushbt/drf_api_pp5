@@ -59,16 +59,31 @@ The following models were created to represent the database model structure of t
 
 #### Like Model
 
-- The Like Model contains the following fields: owner, post and created_on
-- ForeignKey relation between to the User Model ID field
-- ForeignKey relation between the owner field and the User Model ID field
-- ForeignKey relation between the post field and the Post Model post field
+- The Like Model contains the following fields: owner, post and created_on.
+- ForeignKey relation between to the User Model ID field.
+- ForeignKey relation between the owner field and the User Model ID field.
+- ForeignKey relation between the post field and the Post Model post field.
 
 ## Technologies Used
 
 ### Language & Frameworks
 
+- Python
+- Django
+
 ### Libraries & Tools
+
+- [APITestCase](https://www.django-rest-framework.org/api-guide/testing/) - Django Rest Framework APITestCase was used for automated testing.
+- [Cloudinary](https://cloudinary.com/) to store static files.
+- [Dbdiagram.io](https://dbdiagram.io/home) used for the database schema diagram.
+- [GitHub](https://github.com/) was used as a remote repository to store project code.
+- [Gitpod)](https://gitpod.io/workspaces) - a virtual IDE workspace used to build this site.
+- [Heroku](https://Heroku.com) was used to deploy the project into live environment.
+- [Django REST Framework](https://www.django-rest-framework.org/) was used to build the back-end API.
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for user authentication.
+- [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation.
+- [Psycopg2](https://www.psycopg.org/docs/) was used as a PostgreSQL database adapter for Python.
+- [ElephantSQL](https://www.elephantsql.com//) – This was used as the deployed project on Heroku uses an ElephantSQL database.
 
 ## Validation
 
