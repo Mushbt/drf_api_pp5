@@ -87,6 +87,9 @@ The following models were created to represent the database model structure of t
 
 ## Validation
 
+### PEP8 Validation
+[PEP8CI](https://pep8ci.herokuapp.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
+
 ## Testing
 
 ### Manual Testing
