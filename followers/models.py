@@ -1,7 +1,16 @@
+# Imports
+
+# 3rd party
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Follower(models.Model):
+    """
+    Class for Follower Model
+    'Owner' follows other users
+    'Followed' is being followed by other users
+    """
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
