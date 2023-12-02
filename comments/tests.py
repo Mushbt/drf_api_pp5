@@ -25,5 +25,3 @@ class CommentDetailViewTests(APITestCase):
             description='wildlife', country='Brazil')
         Comment.objects.create(owner=samuel, post_id=1, content='wow')
         Comment.objects.create(owner=angelo, post_id=2, content='amazing')
-    
-    
