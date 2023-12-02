@@ -121,4 +121,9 @@ A total of --- tests were created and they all passed.
 
 ### Images
 
+- User avatar default image taken from [Code Institute](https://codeinstitute.net/) Django REST Framework walkthrough.
+- Default post image was taken from [Code Institute](https://codeinstitute.net/) Django REST Framework walkthrough.
+
 ### Code
+
+This project was created based on the Code Institute's Django REST API walkthrough project. [DRF API](https://github.com/Code-Institute-Solutions/drf-api)
