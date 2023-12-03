@@ -2,13 +2,14 @@
 
 # 3rd party
 from django.db.models import Count
-from rest_framework import generics, permissions,filters
+from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 
 # Internal
 from .models import Post
 from .serializers import PostSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
+
 
 class PostList(generics.ListCreateAPIView):
     """
@@ -19,14 +20,10 @@ class PostList(generics.ListCreateAPIView):
         permissions.IsAuthenticatedOrReadOnly
     ]
     queryset = Post.objects.annotate(
-         comments_number=Count(
-            'comment',
-            distinct=True
-        ),
+        comments_number=Count(
+            'comment', distinct=True),
         likes_number=Count(
-            'likes',
-            distinct=True
-        )
+            'likes', distinct=True)
     ).order_by('-created_on')
     filter_backends = [
         filters.OrderingFilter,
@@ -52,6 +49,7 @@ class PostList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
