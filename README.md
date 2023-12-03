@@ -26,7 +26,7 @@ The project's backend section centers on its administrative aspect and covers on
 
 The following models were created to represent the database model structure of the application:
 <Insert Image here>
-<hr>
+
 
 
 #### User Model
@@ -67,6 +67,7 @@ The following models were created to represent the database model structure of t
 - ForeignKey relation between to the User Model ID field.
 - ForeignKey relation between the owner field and the User Model ID field.
 - ForeignKey relation between the post field and the Post Model post field.
+<hr>
 
 ## Technologies Used
 
@@ -88,6 +89,7 @@ The following models were created to represent the database model structure of t
 - [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation.
 - [Psycopg2](https://www.psycopg.org/docs/) was used as a PostgreSQL database adapter for Python.
 - [ElephantSQL](https://www.elephantsql.com//) – This was used as the deployed project on Heroku uses an ElephantSQL database.
+<hr>
 
 ## Validation
 
@@ -361,7 +363,7 @@ A total of 34 tests were created and they all passed.
 - Test to ensure user can't update other users profiles
 - Test to ensure users can't update their profiles if not logged in
 - Test to ensure user can delete their own profile
-
+<hr>
 
 ## Credits
 
@@ -373,3 +375,4 @@ A total of 34 tests were created and they all passed.
 ### Code
 
 This project was created based on the Code Institute's Django REST API walkthrough project. [DRF API](https://github.com/Code-Institute-Solutions/drf-api)
+<hr>
