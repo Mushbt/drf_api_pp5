@@ -97,77 +97,106 @@ The following models were created to represent the database model structure of t
 
 <details><summary>DRF_API app</summary>
     <details><summary>Permissions</summary>
+    <img src="docs/readme/drf_permissions.png">
     </details>
     <details><summary>Serializers</summary>
+    <img src="docs/readme/drf_serializers.png">
     </details>
     <details><summary>Urls</summary>
+    <img src="docs/readme/drf_urls.png">
     </details>
     <details><summary>Views</summary>
+    <img src="docs/readme/drf_views.png">
     </details>
 </details>
 <hr>
 <details><summary>Comments app</summary>
     <details><summary>Models</summary>
+    <img src="docs/readme/comments_models.png">
     </details>
     <details><summary>Serializers</summary>
+    <img src="docs/readme/comments_serializers.png">
     </details>
     <details><summary>Tests</summary>
+    <img src="docs/readme/comments_tests.png">
     </details>
     <details><summary>Urls</summary>
+    <img src="docs/readme/comments_urls.png">
     </details>
     <details><summary>Views</summary>
+    <img src="docs/readme/comments_views.png">
     </details>
 </details>
 <hr>
 <details><summary>Followers app</summary>
     <details><summary>Models</summary>
+    <img src="docs/readme/followers_models.png">
     </details>
     <details><summary>Serializers</summary>
+    <img src="docs/readme/followers_serializers.png">
     </details>
     <details><summary>Tests</summary>
+    <img src="docs/readme/followers_tests.png">
     </details>
     <details><summary>Urls</summary>
+    <img src="docs/readme/followers_urls.png">
     </details>
     <details><summary>Views</summary>
+    <img src="docs/readme/followers_views.png">
     </details>
 </details>
 <hr>
 <details><summary>Likes app</summary>
     <details><summary>Models</summary>
+    <img src="docs/readme/likes_models.png">
     </details>
     <details><summary>Serializers</summary>
+    <img src="docs/readme/likes_serializers.png">
     </details>
     <details><summary>Tests</summary>
+    <img src="docs/readme/likes_tests.png">
     </details>
     <details><summary>Urls</summary>
+    <img src="docs/readme/likes_urls.png">
     </details>
     <details><summary>Views</summary>
+    <img src="docs/readme/likes_views.png">
     </details>
 </details>
 <hr>
 <details><summary>Posts app</summary>
     <details><summary>Models</summary>
+    <img src="docs/readme/posts_models.png">
     </details>
     <details><summary>Serializers</summary>
+    <img src="docs/readme/posts_serializers.png">
     </details>
     <details><summary>Tests</summary>
+    <img src="docs/readme/posts_tests.png">
     </details>
     <details><summary>Urls</summary>
+    <img src="docs/readme/posts_urls.png">
     </details>
     <details><summary>Views</summary>
+    <img src="docs/readme/posts_views.png">
     </details>
 </details>
 <hr>
 <details><summary>Profiles app</summary>
     <details><summary>Models</summary>
+    <img src="docs/readme/profiles_models.png">
     </details>
     <details><summary>Serializers</summary>
+    <img src="docs/readme/profiles_serializers.png">
     </details>
     <details><summary>Tests</summary>
+    <img src="docs/readme/profiles_tests.png">
     </details>
     <details><summary>Urls</summary>
+    <img src="docs/readme/profiles_urls.png">
     </details>
     <details><summary>Views</summary>
+    <img src="docs/readme/profiles_views.png">
     </details>
 </details>
 <hr>
