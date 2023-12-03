@@ -4,7 +4,7 @@
 from django.db import IntegrityError
 from rest_framework import serializers
 
-#Internal
+# Internal
 from .models import Like
 
 
@@ -22,7 +22,7 @@ class LikeSerializer(serializers.ModelSerializer):
             'created_on',
             'post',
         ]
-    
+
     def create(self, validated_data):
         """
         Handles possible duplications from same users

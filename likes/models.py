@@ -24,6 +24,6 @@ class Like(models.Model):
         # 'unique_together' prevents users from like duplications
         unique_together = ['owner', 'post']
         ordering = ['created_on']
-    
+
     def __str__(self):
         return f'{self.owner} {self.post}'
