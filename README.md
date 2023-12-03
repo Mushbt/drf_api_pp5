@@ -25,7 +25,8 @@ The project's backend section centers on its administrative aspect and covers on
 ## Database
 
 The following models were created to represent the database model structure of the application:
-<Insert Image here>
+<img src="docs/readme/database_schema.png">
+<hr>
 
 
 
