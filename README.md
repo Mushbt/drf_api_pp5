@@ -200,6 +200,7 @@ The following models were created to represent the database model structure of t
     </details>
 </details>
 <hr>
+
 ## Testing
 The following tests were carried out on the app:
 1. Manual testing
@@ -220,6 +221,82 @@ Like | Create & delete | A like can be created or deleted (like / unlike post) |
 Follower | Create & delete | Follow or unfollow user | Works as expected
 
 In addition, posts, comments, likes and following can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
+
+<details><summary>User</summary>
+    <details><summary>Create user</summary>
+    <img src="docs/testing/create_user.png">
+    <img src="docs/testing/create_user_success.png">
+    <img src="docs/testing/create_user_confirmation.png">
+    </details>
+    <details><summary>Change user permissions</summary>
+    <img src="docs/testing/user_permissions_before.png">
+    <img src="docs/testing/user_permissions_after.png">
+    </details>
+</details>
+<hr>
+<details><summary>Profile</summary>
+    <details><summary>Update profile</summary>
+    <img src="docs/testing/update_profile.png">
+    <img src="docs/testing/update_profile_success.png">
+    </details>
+    <details><summary>Delete profile</summary>
+    <img src="docs/testing/delete_profile.png">
+    <img src="docs/testing/delete_profile_success.png">
+    </details>
+</details>
+<hr>
+<details><summary>Post</summary>
+    <details><summary>Create post</summary>
+    <img src="docs/testing/create_post.png">
+    <img src="docs/testing/create_post_success.png">
+    </details>
+    <details><summary>Update post</summary>
+    <img src="docs/testing/update_post.png">
+    </details>
+    <details><summary>Delete post</summary>
+    <img src="docs/testing/delete_post.png">
+    <img src="docs/testing/delete_post_success.png">
+    </details>
+</details>
+<hr>
+<details><summary>Comment</summary>
+    <details><summary>Create comment</summary>
+    <img src="docs/testing/create_comment.png">
+    <img src="docs/testing/create_comment_success.png">
+    </details>
+    <details><summary>Update comment</summary>
+    <img src="docs/testing/comment_update.png">
+    </details>
+    <details><summary>Delete comment</summary>
+    <img src="docs/testing/comment_delete.png">
+    <img src="docs/testing/comment_delete_success.png">
+    </details>
+</details>
+<hr>
+<details><summary>Like</summary>
+    <details><summary>Like post</summary>
+    <img src="docs/testing/like_post.png">
+    <img src="docs/testing/like_post_success.png">
+    <img src="docs/testing/like_post_confirm.png">
+    </details>
+    <details><summary>Unlike post</summary>
+    <img src="docs/testing/delete_like.png">
+    <img src="docs/testing/delete_like_success.png">
+    </details>
+</details>
+<hr>
+<details><summary>Follow</summary>
+    <details><summary>Follow user</summary>
+    <img src="docs/testing/follow_user.png">
+    <img src="docs/testing/follow_user_success.png">
+    <img src="docs/testing/follow_user_confirm.png">
+    </details>
+    <details><summary>Unfollow user</summary>
+    <img src="docs/testing/delete_follow.png">
+    <img src="docs/testing/delete_follow_success.png">
+    </details>
+</details>
+<hr>
 
 ### Automated Testing
 
