@@ -7,6 +7,7 @@ from rest_framework import serializers
 # Internal
 from .models import Follower
 
+
 class FollowerSerializer(serializers.ModelSerializer):
     """
     Class for FollowSerializer
@@ -23,7 +24,7 @@ class FollowerSerializer(serializers.ModelSerializer):
             'created_on',
             'followed_user',
         ]
-    
+
     def create(self, validated_data):
         """
         For handling possible duplications

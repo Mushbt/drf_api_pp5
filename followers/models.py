@@ -26,6 +26,6 @@ class Follower(models.Model):
     class Meta:
         unique_together = ['owner', 'followed']
         ordering = ['-created_on']
-    
+
     def __str__(self):
         return f'{self.owner} {self.followed}'

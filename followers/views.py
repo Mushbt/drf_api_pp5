@@ -8,8 +8,9 @@ from .models import Follower
 from .serializers import FollowerSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
 
+
 class FollowerList(generics.ListCreateAPIView):
-    """ 
+    """
     Class for FollowerList
     """
     serializer_class = FollowerSerializer
@@ -20,6 +21,7 @@ class FollowerList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
 class FollowerDetail(generics.RetrieveDestroyAPIView):
     """
