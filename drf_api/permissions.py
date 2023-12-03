@@ -6,7 +6,7 @@ from rest_framework import permissions
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
-    Class for custom permissions to ensure 
+    Class for custom permissions to ensure
     users can only update or delete their content
     """
     def has_object_permission(self, request, view, obj):
