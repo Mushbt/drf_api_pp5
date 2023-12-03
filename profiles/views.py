@@ -1,4 +1,4 @@
-# Imports 
+# Imports
 
 # 3rd party
 from django.db.models import Count
@@ -10,6 +10,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .models import Profile
 from .serializers import ProfileSerializer
 from drf_api.permissions import IsOwnerOrReadOnly
+
 
 class ProfileList(generics.ListAPIView):
     """
@@ -71,7 +72,7 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
             distinct=True
         )
     ).order_by('-created_on')
-    
+
     def delete(self, request, pk):
         """
         Delete profile by ID
