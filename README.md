@@ -94,6 +94,83 @@ The following models were created to represent the database model structure of t
 ### PEP8 Validation
 [PEP8CI](https://pep8ci.herokuapp.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
 
+
+<details><summary>DRF_API app</summary>
+    <details><summary>Permissions</summary>
+    </details>
+    <details><summary>Serializers</summary>
+    </details>
+    <details><summary>Urls</summary>
+    </details>
+    <details><summary>Views</summary>
+    </details>
+</details>
+<hr>
+<details><summary>Comments app</summary>
+    <details><summary>Models</summary>
+    </details>
+    <details><summary>Serializers</summary>
+    </details>
+    <details><summary>Tests</summary>
+    </details>
+    <details><summary>Urls</summary>
+    </details>
+    <details><summary>Views</summary>
+    </details>
+</details>
+<hr>
+<details><summary>Followers app</summary>
+    <details><summary>Models</summary>
+    </details>
+    <details><summary>Serializers</summary>
+    </details>
+    <details><summary>Tests</summary>
+    </details>
+    <details><summary>Urls</summary>
+    </details>
+    <details><summary>Views</summary>
+    </details>
+</details>
+<hr>
+<details><summary>Likes app</summary>
+    <details><summary>Models</summary>
+    </details>
+    <details><summary>Serializers</summary>
+    </details>
+    <details><summary>Tests</summary>
+    </details>
+    <details><summary>Urls</summary>
+    </details>
+    <details><summary>Views</summary>
+    </details>
+</details>
+<hr>
+<details><summary>Posts app</summary>
+    <details><summary>Models</summary>
+    </details>
+    <details><summary>Serializers</summary>
+    </details>
+    <details><summary>Tests</summary>
+    </details>
+    <details><summary>Urls</summary>
+    </details>
+    <details><summary>Views</summary>
+    </details>
+</details>
+<hr>
+<details><summary>Profiles app</summary>
+    <details><summary>Models</summary>
+    </details>
+    <details><summary>Serializers</summary>
+    </details>
+    <details><summary>Tests</summary>
+    </details>
+    <details><summary>Urls</summary>
+    </details>
+    <details><summary>Views</summary>
+    </details>
+</details>
+<hr>
 ## Testing
 The following tests were carried out on the app:
 1. Manual testing
