@@ -243,7 +243,7 @@ class Post(models.Model):
         ('UZ', 'Uzbekistan'),
         ('VU', 'Vanuatu'),
         ('VE', 'Venezuela'),
-        ('VN', 'Viet Nam'),
+        ('VN', 'Vietnam'),
         ('VG', 'Virgin Islands, British'),
         ('VI', 'Virgin Islands, U.s.'),
         ('WF', 'Wallis And Futuna'),
